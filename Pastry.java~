@@ -1,6 +1,0 @@
-public abstract class Pastry implements Dessert {
-  @Override
-  public String description(){
-    return "Pastry";
-  }    
-}
