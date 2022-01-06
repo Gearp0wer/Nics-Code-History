@@ -1,0 +1,17 @@
+/**
+* Legging: A child of pants
+*
+* @author  Nic Locklear
+* @version 1.0
+* @since   2021-03-31 
+*/
+public class Shorts extends Pants {
+  
+  public Shorts(int size, String Color, String Fit) { 
+    super("Shorts", size, Color, Fit);
+  }
+  public String getType(){
+    return "Shorts";
+  }
+  
+}

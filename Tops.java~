@@ -1,0 +1,47 @@
+/**
+* An abstract
+*
+* @author  Nic Locklear
+* @version 1.0
+* @since   2021-03-31 
+*/
+public abstract class Tops implements Clothing {
+  private String Type, Color;
+  private int Size;
+
+  public Tops(String Type, int Size, String Color) { 
+   this.Type = Type;
+   this.Size = Size;
+   this.Color = Color;
+  }
+  
+  public void setType(String newtype){
+    this.Type = newtype;
+  }
+  
+  public void setSize(int newsize){
+    this.Size = newsize;
+  }
+  
+  public void setColor(String newcolor){
+    this.Color = newcolor;
+  }
+  
+  public String getType(){
+    return Type;
+  }
+  
+  public int getSize(){
+    return Size;
+  }
+  
+  public String getColor(){
+    return Color;
+  }
+  
+  @Override
+  public String toString(){
+      
+    return("Type: " + getType() +" Size: " + getSize() + " Color: " + getColor());
+  }
+}

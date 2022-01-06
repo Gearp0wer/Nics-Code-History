@@ -1,0 +1,11 @@
+/**
+* An enumeration specifying the fit of the jeans
+*
+* @author  Nic Locklear
+* @version 1.0
+* @since   2021-03-31 
+*/
+
+enum JEANFIT{
+  
+}

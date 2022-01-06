@@ -1,0 +1,17 @@
+/**
+* Sweater defines objects that are classified as Sweaters, children of Tops
+*
+* @author  Nic Locklear
+* @version 1.0
+* @since   2021-04-03
+*/
+public class Sweater extends Tops {
+  private SWEATERTYPE sweaterType;
+  
+  public Sweater(SWEATERTYPE sweater, int size, String color) { 
+    super(sweaterType.name(), size, color);
+    this.sweaterType = sweater;
+  }
+  /* ADD YOUR CODE HERE */
+  
+}

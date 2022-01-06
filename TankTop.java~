@@ -1,0 +1,13 @@
+
+public class TankTop extends Tops {
+  private String strapType;
+  
+  public Tanktop(String straptype, int size, String color) { 
+    super("Tank Top", size, color);
+    this.sweaterType = sweater;
+  }
+  
+  public String getType(){
+    return "Tank Top";
+  }
+}
