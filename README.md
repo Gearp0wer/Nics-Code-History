@@ -1,8 +1,0 @@
-- Hi, I’m @Gearp0wer
-- I’m interested in DND, cooking, baking, and coding.
-- I’m currently learning data structures and how to write in C and JavaScript
-- How to reach me: Contact me via email (nicholaslocklear0@gmail.com)
-
-- NOTES -
-Basically, this github is being used as a repository for the choice bits of code I have written during school. 
-This spans the past year, and my classes in Object Oriented Programming and intro to Low Level Programming (taught in Java and C, respectively).
