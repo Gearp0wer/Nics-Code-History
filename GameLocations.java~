@@ -1,0 +1,73 @@
+/**
+ * @author Nicholas Locklear
+ * @version 1.0
+ * @since 04/22/2021
+ *
+ * @param  total number of locations 
+ * @param  2D int array of distances
+ * @param  LinkedList of Location objects
+ * @param  boolean check for if a location was visited
+ * @return 
+ */
+import java.util.*;
+public class GameLocations {
+  private int total;
+  private int[][] distance;
+  private LinkedList<Location> locations;
+  private boolean[] visited;
+  
+  public GameLocations(int locInput) { 
+    this.total = locInput;
+    this.distance = new int[total][total];
+    this.locations = new LinkedList<Location>();
+    this.visited = new boolean[total];
+    for(int i = 0; i < visited.length; ++i){
+      visited[i] = false;
+    }
+  }
+  
+  public void addLocation(Location newloc){
+    this.locations.add(newloc);
+    int indexedLoc = locations.indexOf(newloc);
+    for(int i = 0; i< distance.length; ++i){
+      for(int j = 0; j< distance[0].length; ++j){
+        if(i == indexedLoc){
+          distance[i][j] = -1;
+        }
+        if(j == indexedLoc){
+          distance[i][j] = -1;
+        }
+      }
+    }  
+  }
+  
+  public void addDistance(Location from, Location to, int dist){
+    distance[locations.indexOf(from)][locations.indexOf(to)] = dist;
+  }
+  
+  public int distanceIs(Location start, Location end){
+    return distance[locations.indexOf(start)][locations.indexOf(end)];
+  }
+  
+  public void markAsVisited(Location visit, boolean check){
+    visited[locations.indexOf(visit)] = check;
+  }
+  
+  public boolean haveVisited(Location visit){
+    return visited[locations.indexOf(visit)];
+  }
+  
+  public Queue<Location> directDestinations(Location input){
+    Queue<Location> destinations = new LinkedList<Location>();
+    int indexedLoc = locations.indexOf(input);
+    for(int x = 0; x < distance[indexedLoc].length; ++x){
+      if(distance[indexedLoc][x] != -1){
+        destinations.add(locations.get(x));
+      }
+    }
+    
+    return destinations;
+  }
+  
+  
+}

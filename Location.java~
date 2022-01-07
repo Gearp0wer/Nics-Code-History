@@ -1,0 +1,25 @@
+/**
+ * @author Nicholas Locklear
+ * @version 1.0
+ * @since 04/22/2021
+ *
+ * @param  name of the location
+ * @param  description of the location
+ * @return      the image at the specified URL
+ */
+public class Location {
+  private String locName;
+  private String locDesc;
+  
+  public Location(String name, String desc) { 
+   this.locName = name;
+   this.locDesc = desc;
+  }
+  
+  public static void main(String[] args) { 
+    
+  }
+  
+
+  
+}
