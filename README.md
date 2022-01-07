@@ -1,6 +1,6 @@
 - Hi, I’m @Gearp0wer
 - I’m interested in DND, cooking, baking, and coding.
-- I’m currently learning data structures and how to write in C
+- I’m currently learning data structures and how to write in C and JavaScript
 - How to reach me: Contact me via email (nicholaslocklear0@gmail.com)
 
 - NOTES -
