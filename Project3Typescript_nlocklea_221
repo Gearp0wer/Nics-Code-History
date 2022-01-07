@@ -1,0 +1,88 @@
+Script started on 2021-12-06 19:41:04-05:00
+bash-4.4$ daa[Kte
+Mon Dec  6 19:41:09 EST 2021
+bash-4.4$ unae[Kme -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ pwd
+/home/nlocklea/CS262/Projects/Project3_nlocklea_221
+bash-4.4$ ls
+Makefile  orderlist_nlocklea_221.c  orderlist_nlocklea_221.h  Project3_nlocklea_221  Project3_nlocklea_221.c  Project3Typescript_nlocklea_221
+bash-4.4$ rm Project3_nlocklea_221
+bash-4.4$ make
+gcc -g -Wall -std=c89 -pedantic-errors -o Project3_nlocklea_221 Project3_nlocklea_221.c
+bash-4.4$ Project3_nlocklea_221.Project3_nlocklea_221[C[C[C[C[C[C[C[C[C[C[C/Project3_nlocklea_221[C[C[C[C[C[C[C[C[C[C[C[C
+*****************************************************
+
+* Welcome to GMU's Starship Robots Delivery
+* Central Dispatch System
+
+*****************************************************
+
+New delivery order? (y/n) y
+
+Robot Number: 1
+
+Delivery Address for New delivery order: Moms House
+
+Restaurant from which to pick up food: McDonalds
+
+Food Item: Burger
+Food Item: Fries
+Food Item: McFlurry
+Food Item: Apple Slices
+Food Item: 
+
+New delivery order? (y/n) y
+
+Robot Number: 2
+
+Delivery Address for New delivery order: Nic's Dorm
+
+Restaurant from which to pick up food: Ted's Bulletin
+
+Food Item: Breakfast Br urrito
+Food Item: milkshake
+Food Item: frie    hashbrown
+Food Item: 
+
+New delivery order? (y/n) y
+
+Robot Number: 3
+
+Delivery Address for New delivery order: Maddie's appartment                  addies 's appartment        artment
+
+Restaurant from which to pick up food: Chipotle
+
+Food Item: Burrito bowl
+Food Item: soda
+Food Item: guacom  amole
+Food Item: 
+
+New delivery order? (y/n) n
+
+List of Deliveries: 3
+Robot Number 3: Delivery order from Chipotle has 3 food item(s)
+Deliver to: Maddie's apartment
+
+Burrito bowl
+guacamole
+soda
+
+Robot Number 2: Delivery order from Ted's Bulletin has 3 food item(s)
+Deliver to: Nic's Dorm
+
+Breakfast Burrito
+hashbrown
+milkshake
+
+Robot Number 1: Delivery order from McDonalds has 4 food item(s)
+Deliver to: Moms House
+
+Apple Slices
+Burger
+Fries
+McFlurry
+
+Thank you, goodbye.bash-4.4$ exit
+
+Script done on 2021-12-06 19:45:57-05:00
