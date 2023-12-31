@@ -5,6 +5,4 @@
 - How to reach me: Contact me via email (nicholaslocklear0@gmail.com)
 
 - NOTES -
-- **ALL PROJECTS ARE STORED IN BRANCHES FOR NEATNESS, IT IS NOT EMPTY**
 - Basically, this github is being used as a repository for the choice bits of code I have written during school.
-- This spans the past year, and my classes in Object Oriented Programming and intro to Low Level Programming (taught in Java and C, respectively).
