@@ -1,0 +1,240 @@
+************ Tarmart Step 1 ************
+Number of lines: 4
+
+1: = 0 shopper(s) with 0 item(s)
+
+2: TC(29) = 1 shopper(s) with 29 item(s)
+
+3: TC(15) TC(54) = 2 shopper(s) with 69 item(s)
+
+4: TC(61) TC(20) = 2 shopper(s) with 81 item(s)
+
+Best line: 1: = 0 shopper(s) with 0 item(s)
+************ Tarmart Step 2 ************
+Number of lines: 4
+
+1: = 0 shopper(s) with 0 item(s)
+
+2: TC(28) = 1 shopper(s) with 28 item(s)
+
+3: TC(14) TC(54) = 2 shopper(s) with 68 item(s)
+
+4: TC(60) TC(20) = 2 shopper(s) with 80 item(s)
+
+Best line: 1: = 0 shopper(s) with 0 item(s)
+************ Tarmart Step 3 ************
+Number of lines: 4
+
+1: = 0 shopper(s) with 0 item(s)
+
+2: TC(27) = 1 shopper(s) with 27 item(s)
+
+3: TC(13) TC(54) = 2 shopper(s) with 67 item(s)
+
+4: TC(59) TC(20) = 2 shopper(s) with 79 item(s)
+
+Best line: 1: = 0 shopper(s) with 0 item(s)
+************ Tarmart Step 4 ************
+Number of lines: 4
+
+1: = 0 shopper(s) with 0 item(s)
+
+2: TC(26) = 1 shopper(s) with 26 item(s)
+
+3: TC(12) TC(54) = 2 shopper(s) with 66 item(s)
+
+4: TC(58) TC(20) = 2 shopper(s) with 78 item(s)
+
+Best line: 1: = 0 shopper(s) with 0 item(s)
+************ Tarmart Step 5 ************
+Number of lines: 4
+
+1: TC(55) = 1 shopper(s) with 55 item(s)
+
+2: TC(25) = 1 shopper(s) with 25 item(s)
+
+3: TC(11) TC(54) = 2 shopper(s) with 65 item(s)
+
+4: TC(57) TC(20) = 2 shopper(s) with 77 item(s)
+
+Best line: 2: TC(25) = 1 shopper(s) with 25 item(s)
+************ Tarmart Step 6 ************
+Number of lines: 4
+
+1: TC(54) = 1 shopper(s) with 54 item(s)
+
+2: TC(24) = 1 shopper(s) with 24 item(s)
+
+3: TC(10) TC(54) = 2 shopper(s) with 64 item(s)
+
+4: TC(56) TC(20) = 2 shopper(s) with 76 item(s)
+
+Best line: 2: TC(24) = 1 shopper(s) with 24 item(s)
+************ Tarmart Step 7 ************
+Number of lines: 4
+
+1: TC(53) = 1 shopper(s) with 53 item(s)
+
+2: TC(23) = 1 shopper(s) with 23 item(s)
+
+3: TC(9) TC(54) = 2 shopper(s) with 63 item(s)
+
+4: TC(55) TC(20) = 2 shopper(s) with 75 item(s)
+
+Best line: 2: TC(23) = 1 shopper(s) with 23 item(s)
+************ Tarmart Step 8 ************
+Number of lines: 4
+
+1: TC(52) = 1 shopper(s) with 52 item(s)
+
+2: TC(22) = 1 shopper(s) with 22 item(s)
+
+3: TC(8) TC(54) = 2 shopper(s) with 62 item(s)
+
+4: TC(54) TC(20) = 2 shopper(s) with 74 item(s)
+
+Best line: 2: TC(22) = 1 shopper(s) with 22 item(s)
+************ Tarmart Step 9 ************
+Number of lines: 4
+
+1: TC(51) = 1 shopper(s) with 51 item(s)
+
+2: TC(21) = 1 shopper(s) with 21 item(s)
+
+3: TC(7) TC(54) = 2 shopper(s) with 61 item(s)
+
+4: TC(53) TC(20) = 2 shopper(s) with 73 item(s)
+
+Best line: 2: TC(21) = 1 shopper(s) with 21 item(s)
+************ Tarmart Step 10 ************
+Number of lines: 4
+
+1: TC(50) = 1 shopper(s) with 50 item(s)
+
+2: TC(20) TC(78) = 2 shopper(s) with 98 item(s)
+
+3: TC(6) TC(54) = 2 shopper(s) with 60 item(s)
+
+4: TC(52) TC(20) = 2 shopper(s) with 72 item(s)
+
+Best line: 1: TC(50) = 1 shopper(s) with 50 item(s)
+************ Tarmart Step 11 ************
+Number of lines: 4
+
+1: TC(49) = 1 shopper(s) with 49 item(s)
+
+2: TC(19) TC(78) = 2 shopper(s) with 97 item(s)
+
+3: TC(5) TC(54) = 2 shopper(s) with 59 item(s)
+
+4: TC(51) TC(20) = 2 shopper(s) with 71 item(s)
+
+Best line: 1: TC(49) = 1 shopper(s) with 49 item(s)
+************ Tarmart Step 12 ************
+Number of lines: 4
+
+1: TC(48) = 1 shopper(s) with 48 item(s)
+
+2: TC(18) TC(78) = 2 shopper(s) with 96 item(s)
+
+3: TC(4) TC(54) = 2 shopper(s) with 58 item(s)
+
+4: TC(50) TC(20) = 2 shopper(s) with 70 item(s)
+
+Best line: 1: TC(48) = 1 shopper(s) with 48 item(s)
+************ Tarmart Step 13 ************
+Number of lines: 4
+
+1: TC(47) = 1 shopper(s) with 47 item(s)
+
+2: TC(17) TC(78) = 2 shopper(s) with 95 item(s)
+
+3: TC(3) TC(54) = 2 shopper(s) with 57 item(s)
+
+4: TC(49) TC(20) = 2 shopper(s) with 69 item(s)
+
+Best line: 1: TC(47) = 1 shopper(s) with 47 item(s)
+************ Tarmart Step 14 ************
+Number of lines: 4
+
+1: TC(46) = 1 shopper(s) with 46 item(s)
+
+2: TC(16) TC(78) = 2 shopper(s) with 94 item(s)
+
+3: TC(2) TC(54) = 2 shopper(s) with 56 item(s)
+
+4: TC(48) TC(20) = 2 shopper(s) with 68 item(s)
+
+Best line: 1: TC(46) = 1 shopper(s) with 46 item(s)
+************ Tarmart Step 15 ************
+Number of lines: 4
+
+1: TC(45) TC(78) = 2 shopper(s) with 123 item(s)
+
+2: TC(15) TC(78) = 2 shopper(s) with 93 item(s)
+
+3: TC(1) TC(54) = 2 shopper(s) with 55 item(s)
+
+4: TC(47) TC(20) = 2 shopper(s) with 67 item(s)
+
+Best line: 3: TC(1) TC(54) = 2 shopper(s) with 55 item(s)
+************ Tarmart Step 16 ************
+Number of lines: 4
+
+1: TC(44) TC(78) = 2 shopper(s) with 122 item(s)
+
+2: TC(14) TC(78) = 2 shopper(s) with 92 item(s)
+
+3: TC(54) = 1 shopper(s) with 54 item(s)
+
+4: TC(46) TC(20) = 2 shopper(s) with 66 item(s)
+
+Best line: 3: TC(54) = 1 shopper(s) with 54 item(s)
+************ Tarmart Step 17 ************
+Number of lines: 4
+
+1: TC(43) TC(78) = 2 shopper(s) with 121 item(s)
+
+2: TC(13) TC(78) = 2 shopper(s) with 91 item(s)
+
+3: TC(53) = 1 shopper(s) with 53 item(s)
+
+4: TC(45) TC(20) = 2 shopper(s) with 65 item(s)
+
+Best line: 3: TC(53) = 1 shopper(s) with 53 item(s)
+************ Tarmart Step 18 ************
+Number of lines: 4
+
+1: TC(42) TC(78) = 2 shopper(s) with 120 item(s)
+
+2: TC(12) TC(78) = 2 shopper(s) with 90 item(s)
+
+3: TC(52) = 1 shopper(s) with 52 item(s)
+
+4: TC(44) TC(20) = 2 shopper(s) with 64 item(s)
+
+Best line: 3: TC(52) = 1 shopper(s) with 52 item(s)
+************ Tarmart Step 19 ************
+Number of lines: 4
+
+1: TC(41) TC(78) = 2 shopper(s) with 119 item(s)
+
+2: TC(11) TC(78) = 2 shopper(s) with 89 item(s)
+
+3: TC(51) = 1 shopper(s) with 51 item(s)
+
+4: TC(43) TC(20) = 2 shopper(s) with 63 item(s)
+
+Best line: 3: TC(51) = 1 shopper(s) with 51 item(s)
+************ Tarmart Step 20 ************
+Number of lines: 4
+
+1: TC(40) TC(78) = 2 shopper(s) with 118 item(s)
+
+2: TC(10) TC(78) = 2 shopper(s) with 88 item(s)
+
+3: TC(50) TC(74) = 2 shopper(s) with 124 item(s)
+
+4: TC(42) TC(20) = 2 shopper(s) with 62 item(s)
+
+Best line: 4: TC(42) TC(20) = 2 shopper(s) with 62 item(s)
