@@ -1,0 +1,60 @@
+public class Pie extends Pastry {
+  protected PieType type;
+//_____________________________________________________________________________________________________________________  
+  public Pie(){
+    this.type = PieType.Cream;
+  }
+//_____________________________________________________________________________________________________________________    
+  public Pie(PieType newpie){
+    this.type= newpie;
+  }
+//_____________________________________________________________________________________________________________________    
+  public void setPieType(PieType newtype){
+    this.type = newtype;
+  }
+//_____________________________________________________________________________________________________________________    
+  public PieType getPieType(){
+    return type;
+  }
+//_____________________________________________________________________________________________________________________    
+  public double baseCost(){
+    double running_total = 0.0;
+    Ingredient[] IList = ingredientsNeeded();
+    for(Ingredient I : IList){
+      running_total+= I.getPrice();
+    }
+    return running_total;
+  }
+//_____________________________________________________________________________________________________________________    
+  public Ingredient[] ingredientsNeeded(){
+    switch (type){
+      
+      case Fruit:
+        Ingredient[] ingredientFruit = new Ingredient[]{Ingredient.Fruit, Ingredient.Sugar, Ingredient.Salt, 
+        Ingredient.Flour, Ingredient.Butter, Ingredient.Eggs};
+        return ingredientFruit;
+        
+      case Custard:
+        Ingredient[] ingredientCustard = new Ingredient[]{Ingredient.Milk, Ingredient.Cream, Ingredient.Sugar,
+        Ingredient.Eggs};
+        return ingredientCustard; 
+        
+      default:
+        Ingredient[] ingredientCream = new Ingredient[]{Ingredient.Milk, Ingredient.Cream, Ingredient.Sugar,
+        Ingredient.Flour, Ingredient.Eggs};
+        return ingredientCream;
+    }  
+  }
+//_____________________________________________________________________________________________________________________  
+  @Override
+  public String description(){
+    switch (type){
+      case Fruit:
+        return ("Fruit Pie");
+      case Custard:
+        return ("Custard Pie"); 
+      default:
+        return ("Cream Pie");
+    }
+  }
+}

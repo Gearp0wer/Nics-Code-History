@@ -1,7 +1,0 @@
-public abstract class FrozenDessert implements Dessert {
-  
-  @Override
-  public String description(){
-    return "Frozen Dessert";
-  }  
-}
