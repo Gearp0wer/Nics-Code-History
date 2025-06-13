@@ -1,0 +1,10 @@
+
+public interface Dessert {
+  
+  double baseCost();
+  
+  Ingredient[] ingredientsNeeded();
+  
+  String description();
+   
+}

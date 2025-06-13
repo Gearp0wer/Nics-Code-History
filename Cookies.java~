@@ -1,0 +1,7 @@
+public abstract class Cookies implements Dessert {
+  
+  @Override
+  public String description(){
+    return "Cookies";
+  }  
+}
