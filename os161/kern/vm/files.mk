@@ -1,0 +1,1 @@
+SRCS-y += addrspace.c

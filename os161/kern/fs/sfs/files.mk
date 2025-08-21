@@ -1,0 +1,1 @@
+SRCS-y += sfs_fs.c sfs_io.c sfs_vnode.c

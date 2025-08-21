@@ -1,0 +1,1 @@
+SRCS-y += main.c hello.c menu.c 

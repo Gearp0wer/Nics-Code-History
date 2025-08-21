@@ -1,0 +1,1 @@
+SRCS-y += hardclock.c scheduler.c synch.c thread.c

@@ -1,0 +1,31 @@
+Hello.
+The following design document was written by Nic Locklear.
+
+Brief synopsis of the calls:
+getpid	Retrieves the process ID (PID) of the calling process.
+getppid	Retrieves the parent process ID (PPID) of the calling process.
+fork	Creates a new process by duplicating the calling process.
+execv	Replaces the current process image with a new program.
+waitpid	Waits for a specific child process to terminate and retrieves its exit status.
+_exit	Terminates the calling process and signals its status to the parent process.
+
+Threads:
+Given that this implementation of OS161 uses 1:1 process to threads ratio, I felt that it would be beneficial to include a suite of info in the thread itself.
+These things include:
+	The PID
+	A pointer to the parent thread
+	A flag for if the process is dead
+	The process itself
+
+PIDs
+I chose to implement the PID table as one of the defined arrays like the table of sleeping threads in order to make use of the available functions.
+This allowed me to use 1+ the index of the array as the PID for the process ( i didn't want any pid = 0, that got very confusing quick considering 0 was also a successful execution).
+
+given the inclusion of the pids as values held by the threads themselves, get pid and ppid are simple in that they look for the current thread's pid, or the current thread's parent's pid respectively. 
+
+Due to repeated crashes on boot up, I found it hard to bug test at all. on multiple occasions I had to download the working files, backdate the system to a much earlier version, and then reimplement and go from there. Even that did not work. 
+
+
+ I apologize. This class has been extraordinarily hard on me given my schedule and personal life, and I likely will not pass. It's my fault obviously, but I find it extremely frustrating that I would make progress and then find some massive setback. 
+
+I will be back in the spring.

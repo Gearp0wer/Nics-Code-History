@@ -1,0 +1,1 @@
+SRCS-y += stoplight.c stoplight_framework.c

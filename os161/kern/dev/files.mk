@@ -1,0 +1,1 @@
+SRCS-y += generic/ lamebus/ init.c
