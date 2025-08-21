@@ -1,0 +1,18 @@
+Script started on 2025-02-23 23:53:35-05:00
+bash-4.4$ date
+Sun Feb 23 23:53:39 EST 2025
+bash-4.4$ ls
+Answers.txt.txt  cs455p1.exe  pa1_Nicholas	README.TXT.txt
+cs455p1.c	 Makefile     Partners.txt.txt
+bash-4.4$ make
+gcc -g -Wall -std=c99 -pedantic-errors -o cs455p1 cs455p1.c -l ws2_32
+[01m[Kcs455p1.c:6:10:[m[K [01;31m[Kfatal error: [m[KWinsock2.h: No such file or directory
+ #include [01;31m[K<Winsock2.h>[m[K
+          [01;31m[K^~~~~~~~~~~~[m[K
+compilation terminated.
+make: *** [Makefile:13: cs455p1] Error 1
+bash-4.4$ f[Kgd[Kg[Kod why
+bash: god: command not found
+bash-4.4$ exit
+
+Script done on 2025-02-23 23:54:01-05:00

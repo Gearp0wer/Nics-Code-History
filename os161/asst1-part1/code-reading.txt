@@ -1,0 +1,55 @@
+Nicholas Locklear G01090642
+
+
+
+Thread Questions
+1. What happens to a thread when it exits (i.e., calls thread_exit())? What about when it sleeps?
+	When a thread exits, it cleans up portions of itself that are no longer needed.
+	It then waits to be destroyed. 
+	Thread being put to sleep does not clean anything up, but instead essentially puts it on pause.
+	the system checks to make sure the thread going to sleep isnt sleeping in an interrupt handler.
+
+2. What function(s) handle(s) a context switch?
+	mi_switch, md_switch
+
+3. What does it mean for a thread to be in each of the possible thread states?
+	- Running: Currently running.
+    	- Ready: Runnable, but not currently running.
+    	- Sleeping: Paused until woken up.
+    	- Zombie: Thread exited but not deleted.
+
+4. What does it mean to turn interrupts off? How is this accomplished? Why is it important to turn off
+interrupts in the thread subsystem code?
+	Turning off interrupts means that threads cannot be interrupted by signals while running.
+	They are turned off during the call to the forking method.
+	Its important these be turned off so that processes are not interrupted before they finish executing.        
+
+5. What happens when a thread wakes up another thread? How does a sleeping thread get to run again?
+	thread_wakeup takes an address pointer which directs the function to a thread on the table.
+	the function then wakes it with an interrupt and makes it runnable again.
+
+
+Scheduler Questions
+6. What function is responsible for choosing the next thread to run?
+	the scheduler(void) function returns a thread struct indicating the next thread to run.
+
+7. How does that function pick the next thread?
+	it returns the head of the thread queue.
+
+8. What role does the hardware timer play in scheduling? What hardware independent function is called
+on a timer interrupt?
+	The interrupt handler for the hardware timer calls hardclock, defined in kern/thread/hardclock.c.
+	On interrupt, it calls thread_yield which forces a context switch.
+
+
+Synchronization Questions
+9. Describe how thread_sleep() and thread_wakeup() are used to implement semaphores.
+What is the purpose of the argument passed to thread_sleep()?
+	thread_sleep suspends the thread until the semaphore is >0. 
+	thread_wakeup just wakes up the threads regardless of the current semaphore.
+	the address passed to thread_wakeup is done in order to specify which semaphore's associated threads should be woken up.
+	its basically a way of targeting specific threads to wake up.
+10. Why does the lock API in OS/161 provide lock_do_i_hold(), but not lock_get_holder()?
+	Locks are meant to be released by the thread that aquired them.
+
+

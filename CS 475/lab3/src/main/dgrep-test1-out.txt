@@ -1,0 +1,8 @@
+pg-les_miserables.txt:4473:Jean Valjean was pronounced guilty. The terms of the Code were explicit.
+pg-les_miserables.txt:12990:for by article 383 of the Penal Code, the right to try him for which
+pg-les_miserables.txt:39323:[Illustration: Code Table 4b1-5 page 26]
+pg-ulysses.txt:7490:Like to answer them all. Good system for criminals. Code. At their lunch
+pg-war_and_peace.txt:23528:Commission for the Revision of the Code of Laws, Speranski told him
+pg-war_and_peace.txt:23547:request he took the first part of the Civil Code that was being drawn up
+pg-war_and_peace.txt:23548:and, with the aid of the Code Napoleon and the Institutes of Justinian,
+pg-war_and_peace.txt:25255:recalled his labors on the Legal Code, and how painstakingly he had

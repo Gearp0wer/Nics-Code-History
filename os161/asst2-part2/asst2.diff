@@ -1,0 +1,317 @@
+diff --git a/kern/arch/mips/mips/syscall.c b/kern/arch/mips/mips/syscall.c
+index 90c8936..113e2f1 100644
+--- a/kern/arch/mips/mips/syscall.c
++++ b/kern/arch/mips/mips/syscall.c
+@@ -45,6 +45,17 @@
+  * arch/mips/include/types.h.)
+  */
+ 
++int sys_reboot(int code);
++int	sys_getpid( int * );
++int	sys_getppid( );
++void	sys__exit( int );
++int	sys_waitpid( int, userptr_t, int, int * );
++int	sys_fork( struct trapframe *, int * );
++int	sys_execv( userptr_t, userptr_t );
++
++
++
++
+ void
+ mips_syscall(struct trapframe *tf)
+ {
+@@ -66,12 +77,39 @@ mips_syscall(struct trapframe *tf)
+ 	 */
+ 
+ 	retval = 0;
+-
++	//kprintf("Hello/n");
+ 	switch (callno) {
+ 	    case SYS_reboot:
+ 		err = sys_reboot(tf->tf_a0);
+ 		break;
+ 
++	    case SYS_getpid:	
++		err = sys_getpid( &retval );
++		break;
++
++	    case SYS_getppid:	
++		err = sys_getppid();
++		break;
++
++	    case SYS_fork:
++		err = sys_fork( tf, &retval );
++		break;
++
++
++	    case SYS__exit:
++		sys__exit( tf->tf_a0 );
++		err = 0;
++		break;
++
++	    case SYS_waitpid:
++		err = -1;//sys_waitpid( tf->tf_a0, (userptr_t)tf->tf_a1, tf->tf_a2, &retval );
++		break;
++
++
++	    case SYS_execv:
++		err = -1;//sys_execv( (userptr_t) tf->tf_a0, (userptr_t) tf->tf_a1 );
++		break;
++
+ 	    /* Add stuff here */
+  
+ 
+@@ -125,15 +163,6 @@ mips_syscall(struct trapframe *tf)
+ 	assert(curspl==0);
+ }
+ 
+-void
+-md_forkentry(struct trapframe *tf)
+-{
+-	/*
+-	 * This function is provided as a reminder. You need to write
+-	 * both it and the code that calls it.
+-	 *
+-	 * Thus, you can trash it and do things another way if you prefer.
+-	 */
+ 
+-	(void)tf;
+-}
++
++
+diff --git a/kern/include/thread.h b/kern/include/thread.h
+index b051467..bf58517 100644
+--- a/kern/include/thread.h
++++ b/kern/include/thread.h
+@@ -8,7 +8,7 @@
+ /* Get machine-dependent stuff */
+ #include <machine/pcb.h>
+ 
+-
++#define MAX_PROCESSES  128
+ struct addrspace;
+ 
+ struct thread {
+@@ -24,7 +24,14 @@ struct thread {
+ 	/**********************************************************/
+ 	/* Public thread members - can be used by other code      */
+ 	/**********************************************************/
+-	
++	pid_t p_pid; //id
++
++	struct proc* p_proc;	
++
++	struct thread *td_proc;
++
++	int p_is_dead;
++
+ 	/*
+ 	 * This is public because it isn't part of the thread system,
+ 	 * and will need to be manipulated by the userprog and/or vm
+diff --git a/kern/thread/thread.c b/kern/thread/thread.c
+index 75ebad5..58d7721 100644
+--- a/kern/thread/thread.c
++++ b/kern/thread/thread.c
+@@ -21,6 +21,12 @@ typedef enum {
+ 	S_ZOMB,
+ } threadstate_t;
+ 
++//const pid_t pidArray[sizeof(pid_t)*MAX_PROCESSES +1];
++
++/*Global variable for thread table*/
++static struct array *pidArray;
++
++
+ /* Global variable for the thread currently executing at any given time. */
+ struct thread *curthread;
+ 
+@@ -38,6 +44,38 @@ static int numthreads;
+  * thread structure and to create subsequent threads.
+  */
+ 
++
++/*-----------------------------------------------------------------------------------------------*/
++
++int findNextAvail(){ //returns next avail slot in thread table
++	int returnVal = -1;
++	int i;
++	for(i=0; i < MAX_PROCESSES; i++){
++		if(array_getguy(pidArray, i) == NULL){
++			returnVal = i;
++			break;
++		}
++	}
++	return returnVal;
++}
++
++int addThread(struct thread *newThread){ //adds to table //ADD THIS TO THE FORK FUNCTION
++	array_setguy(pidArray, newThread->p_pid-1, newThread);
++	return 1; //success!
++}
++
++/* Nic. you're going to want to make a function specifically to find a thread by its pid. don't. that's stupid.
++the pid-1 is the index. ITS THE INDEX NIC.
++*/
++
++
++
++
++
++/*-----------------------------------------------------------------------------------------------*/
++
++
++
+ static
+ struct thread *
+ thread_create(const char *name)
+@@ -57,7 +95,16 @@ thread_create(const char *name)
+ 	thread->t_vmspace = NULL;
+ 
+ 	thread->t_cwd = NULL;
+-	
++
++	thread->p_pid = 0;
++
++	thread-> p_proc = NULL;
++
++	thread-> td_proc = NULL;
++
++	thread->p_is_dead = 0;
++
++
+ 	// If you add things to the thread structure, be sure to initialize
+ 	// them here.
+ 	
+@@ -89,6 +136,7 @@ thread_destroy(struct thread *thread)
+ 
+ 	kfree(thread->t_name);
+ 	kfree(thread);
++	numthreads--;
+ }
+ 
+ 
+@@ -171,6 +219,14 @@ thread_bootstrap(void)
+ 	struct thread *me;
+ 
+ 	/* Create the data structures we need. */
++	pidArray = array_create();
++	if (pidArray==NULL) {
++		panic("Cannot create pid array\n");
++	}
++	
++
++
++
+ 	sleepers = array_create();
+ 	if (sleepers==NULL) {
+ 		panic("Cannot create sleepers array\n");
+@@ -215,6 +271,7 @@ void
+ thread_shutdown(void)
+ {
+ 	array_destroy(sleepers);
++	array_destroy(pidArray);
+ 	sleepers = NULL;
+ 	array_destroy(zombies);
+ 	zombies = NULL;
+@@ -226,13 +283,15 @@ thread_shutdown(void)
+  * Create a new thread based on an existing one.
+  * The new thread has name NAME, and starts executing in function FUNC.
+  * DATA1 and DATA2 are passed to FUNC.
+- */
++ *
++ int thread_fork(const char *name, 
++		void *data1, unsigned long data2, 
++		void (*func)(void *, unsigned long),
++		struct thread **ret){
++*/
++
+ int
+-thread_fork(const char *name, 
+-	    void *data1, unsigned long data2,
+-	    void (*func)(void *, unsigned long),
+-	    struct thread **ret)
+-{
++thread_fork(const char *name, void *data1, unsigned long data2,  void (*func)(void *, unsigned long), struct thread **ret){
+ 	struct thread *newguy;
+ 	int s, result;
+ 
+@@ -278,29 +337,40 @@ thread_fork(const char *name,
+ 	}
+ 	result = array_preallocate(zombies, numthreads+1);
+ 	if (result) {
++		result = ENOMEM;
+ 		goto fail;
+ 	}
+ 
+ 	/* Do the same for the scheduler. */
+ 	result = scheduler_preallocate(numthreads+1);
+ 	if (result) {
++		result = ENOMEM;
+ 		goto fail;
+ 	}
+ 
+ 	/* Make the new thread runnable */
+ 	result = make_runnable(newguy);
+ 	if (result != 0) {
++		result = ENOMEM;
+ 		goto fail;
+ 	}
+ 
++
+ 	/*
+ 	 * Increment the thread counter. This must be done atomically
+ 	 * with the preallocate calls; otherwise the count can be
+ 	 * temporarily too low, which would obviate its reason for
+ 	 * existence.
+ 	 */
++	if(numthreads >= MAX_PROCESSES){
++		result = EAGAIN;
++		goto fail;
++	}
+ 	numthreads++;
+-
++	
++	int pid = findNextAvail();
++	newguy->p_pid = pid+1;
++	addThread(newguy);
+ 	/* Done with stuff that needs to be atomic */
+ 	splx(s);
+ 
+@@ -324,7 +394,7 @@ thread_fork(const char *name,
+ 	kfree(newguy->t_stack);
+ 	kfree(newguy->t_name);
+ 	kfree(newguy);
+-
++	
+ 	return result;
+ }
+ 
+@@ -591,3 +661,6 @@ mi_threadstart(void *data1, unsigned long data2,
+ 	/* Done. */
+ 	thread_exit();
+ }
++
++
++
+diff --git a/kern/userprog/files.mk b/kern/userprog/files.mk
+index 07b0ebb..73a8ed3 100644
+--- a/kern/userprog/files.mk
++++ b/kern/userprog/files.mk
+@@ -1 +1 @@
+-SRCS-y += loadelf.c runprogram.c uio.c
+\ No newline at end of file
++SRCS-y += loadelf.c runprogram.c uio.c fork.c getpid.c execv.c exit.c getppid.c waitpid.c
+\ No newline at end of file
+diff --git a/sys161-default.conf b/sys161-default.conf
+index b239f5c..34e6e51 100644
+--- a/sys161-default.conf
++++ b/sys161-default.conf
+@@ -115,7 +115,7 @@
+ 
+ #27	nic hwaddr=1
+ 
+-28	random	autoseed =1
++28	random	autoseed 
+ 29	timer
+ 30	trace
+ # Note: Maximum possible ram is 16 megabytes (16777216).

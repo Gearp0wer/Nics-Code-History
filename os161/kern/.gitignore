@@ -1,0 +1,10 @@
+machine
+autoconf.c
+autoconf.h
+
+opt-*.h
+
+version
+vers.c
+
+kernel

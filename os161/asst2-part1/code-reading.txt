@@ -1,0 +1,70 @@
+Nicholas Locklear
+G01090642
+Questions
+
+
+1. What are the ELF magic numbers?
+ELFMAG0		0x7f
+ELFMAG1		'E'
+ELFMAG2		'L'
+ELFMAG3		'F'
+ELF file header has e_ident that holds the magic number.
+
+
+2. What is the difference between UIO_USERISPACE and UIO_USERSPACE? When should one use
+UIO_SYSSPACE instead?
+UIO_USERSPACE holds user process data, while UIO_USERISPACE holds user process code.
+UIO_USERISPACE is used when an executable process is happening at the user space marked by UIO_USERISPACE.
+UIO_SYSSPACE is used when the source or destination of a transferrence of data is in the kernel space. 
+
+
+3. Why can the struct uio that is used to read in a segment be allocated on the stack in
+load_segment() (i.e., where does the memory read actually go)?
+The struct uio's pointer variable points to the virtual address where the memory was read to. That is why the struct itself can be allocated on the stack. The data ends up in uio.
+
+
+4. In runprogram(), why is it important to call vfs_close() before switching to usermode?
+The file needs to be closed so that if another thread or pointer needs access to run a program, it's available.
+
+
+5. What function forces the processor to switch into usermode? Is this function machine dependent?
+mips_usermode is the function called, typically when entering from a fork, from a brand new address space after exec(), or when first starting the userlevel program.
+
+
+6. In what file are copyin, copyout and memmove are defined? Why can't copyin and copyout be
+implemented simply as memmove?
+The definitions are all found in kern/include/lib.h. copyinout.c also holds definitions for them. Memmove does not handle domain crossing, so it doesnt check to see if memory being copied from address space overlaps with kernel space.
+
+
+7. What is the purpose of userptr_t? Explain briefly.
+It's a pointer that points to one byte, which indicates a memory address in the user space that we are interacting with, like by copying memory.
+
+
+8. What is the numerical value of the exception code for a MIPS system call?
+EX_SYS is defined as 8 in trapframe.h.
+
+
+9. Why does mips_trap() set curspl to SPL_HIGH "manually", instead of using splhigh()?
+doing it manually reflects the current state without the need for additional checks or operations.
+
+
+10. How many bytes is an instruction in MIPS? (Answer this by reading mips_syscall() carefully,
+not by looking somewhere else.)
+on syscall it returns the program counter stored in trapframe. tf->tf_epc is incremented by 4 bytes, meaning a mips instruction is 4 bytes.
+
+
+11. Why do you "probably want to change" the implementation of kill_curthread()?
+Kill_curthread() works at the kernel level, which really doesnt need to fail due to a usermode trap.
+
+
+12. What would be required to implement a system call that took more than 4 arguments?
+We would have to allocate the other arguments onto the stack using copyin().
+
+
+13. What is the purpose of the SYSCALL macro?
+The point of the macro is to provide a sort of template for populating all syscalls.
+
+
+14. What is the MIPS instruction that actually triggers a system call? (Answer this by reading the source
+in this directory, not looking somewhere else.)
+"syscall" is the line in the instruction that actually triggers the system call through assembly.

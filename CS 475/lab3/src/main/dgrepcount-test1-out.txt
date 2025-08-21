@@ -1,0 +1,16 @@
+pg-being_ernest.txt:58
+pg-dorian_gray.txt:622
+pg-dracula.txt:707
+pg-emma.txt:584
+pg-frankenstein.txt:702
+pg-great_expectations.txt:830
+pg-grimm.txt:457
+pg-huckleberry_finn.txt:241
+pg-les_miserables.txt:3388
+pg-metamorphosis.txt:83
+pg-moby_dick.txt:910
+pg-sherlock_holmes.txt:575
+pg-tale_of_two_cities.txt:768
+pg-tom_sawyer.txt:459
+pg-ulysses.txt:1218
+pg-war_and_peace.txt:3219

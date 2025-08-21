@@ -1,0 +1,1 @@
+SRCS-y += beep.c console.c pseudorand_att.c pseudorand.c random.c rtclock.c

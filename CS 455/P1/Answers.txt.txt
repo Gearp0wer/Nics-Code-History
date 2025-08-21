@@ -1,0 +1,103 @@
+for www.google.com:
+
+You entered: www.google.com
+Hostname received: www.google.com
+Flags set: 0x0100
+DNS Query crafted. Now Sending.
+Sending DNS query (attempt 1)...
+DNS Response received:
+
+--- DNS Header ---
+ID: 0xC249
+QR: 1
+OPCODE: 0
+AA: 0
+TC: 0
+RD: 1
+RA: 1
+Z: 0
+RCode: 0
+questionCount: 1
+answerCount: 6
+authCount: 0
+recordsCount: 0
+
+--- Question Section ---
+QNAME: www.google.com.
+QTYPE: 256
+QCLASS: 256
+
+--- Answer Section ---
+TYPE: 256
+CLASS: 256
+TTL: -369098752
+RDLENGTH: 1024
+
+for Instagram.com
+
+You entered: www.Instagram.com
+Hostname received: www.Instagram.com
+Flags set: 0x0100
+DNS Query crafted. Now Sending.
+Sending DNS query (attempt 1)...
+DNS Response received:
+
+--- DNS Header ---
+ID: 0x554A
+QR: 1
+OPCODE: 0
+AA: 0
+TC: 0
+RD: 1
+RA: 1
+Z: 0
+RCode: 0
+questionCount: 1
+answerCount: 2
+authCount: 0
+recordsCount: 0
+
+--- Question Section ---
+QNAME: www.Instagram.com.
+QTYPE: 256
+QCLASS: 256
+
+--- Answer Section ---
+TYPE: 1280
+CLASS: 256
+TTL: 2097545216
+RDLENGTH: 5888
+
+for www.tumblr.com
+You entered: www.tumblr.com
+Hostname received: www.tumblr.com
+Flags set: 0x0100
+DNS Query crafted. Now Sending.
+Sending DNS query (attempt 1)...
+DNS Response received:
+
+--- DNS Header ---
+ID: 0x0B4B
+QR: 1
+OPCODE: 0
+AA: 0
+TC: 0
+RD: 1
+RA: 1
+Z: 0
+RCode: 0
+questionCount: 1
+answerCount: 1
+authCount: 0
+recordsCount: 0
+
+--- Question Section ---
+QNAME: www.tumblr.com.
+QTYPE: 256
+QCLASS: 256
+
+--- Answer Section ---
+TYPE: 256
+CLASS: 256
+TTL: 486539264
+RDLENGTH: 1024

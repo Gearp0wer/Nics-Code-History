@@ -1,0 +1,126 @@
+
+CS262 Lab 4 – Debugging I
+Question / Answer Sheet
+
+
+Student Name Nicholas Locklear                                       
+      G Number 01090642
+
+Lab TA Farina Faiz                                       
+    Lab Section 221
+
+The questions on this sheet should be answered as you progress through
+Lab 4. They are given in the original order of the main Lab 4 document.
+Use the original documentation for Lab 4, but write the answers to the
+questions on this sheet. You will submit a soft copy of this sheet as
+part of your lab submission. Therefore, you may wish to copy and paste
+this answer sheet to an ASCII text editor, write your answers directly
+into the editor, and then save the file. NOTE: Do not use any non-ASCII
+file formats (like Word or ODS format).
+
+It is important that you follow this narrative carefully, and avoid any
+shortcuts in this lab. The answers to many of the questions you will be
+given depend upon properly completing the lab in the sequence presented.
+
+Note: This lab must be completed on zeus using the gcc compiler.
+Compilers on other systems (mason.gmu.edu, your personal linux machine,
+Microsoft Visual C++ or XCode) may not give the same results. The TA
+will be looking for specific answers for the grading of this lab and the
+use of other compilers may result in incorrect answers.
+
+Step #0:
+
+Step #1:
+
+How many errors appear? 3
+How many warnings appear? 2
+
+
+Step #2:
+
+Step #3:
+
+Run the program, and at the prompt, enter the value 10.
+What happens? entering only produces newlines and does not advance the code(also a segmentation fault if you wait long enough)
+
+What value is printed after “The sum of integers 0 to 10 is: “ ? 10
+What value *should* have been printed? 55
+How many warnings appear without the -Wall option? 0
+How many warnings appear with the -Wall option?  2 warnings, 1 note
+
+
+Step #4:
+
+How many times does the printf statement you added get executed? 1
+List in order the numerical values of /sum/ output by the printf
+statement you added: 10
+
+
+Answer the following questions again, based on the most recent code
+execution:
+
+            How many times does the printf statement you added get
+executed? 1
+
+List in order the numerical values of /sum/ output by
+the printf statement you added:
+10
+What is the value of sum output by the program in the final statement?
+10
+
+
+Compile and run the code again (using 10 as input). Did the "statement
+with no effect" warning message go away? yes
+
+Now answer the following questions:
+
+          How many times does the printf statement you added get
+executed? 1
+
+List in order the numerical values of /sum/ output by
+the printf statement you added:
+10
+What is the value of sum output by the program in the final statement?
+10
+
+
+Comment out the for loop, and copy it to the line below, this time
+without the semicolon.
+Compile and run the program again (using 10 as input). Now answer the
+questions:
+
+How many times does the printf statement you added get executed? 10
+List in order the numerical values of /sum/ output by
+the printf statement you added:
+0 1 3 6 10 15 21 28 36 45
+
+What is the value of sum output by the program in the final statement?
+45
+Is the final value of sum correct? (Look at your answer to step #3
+above) no
+
+
+You are supposed to add the integers from 0 to 10. Which integer is
+missing? 10
+
+Compile and run the code again (using 10 as input):
+Answer the following questions:
+
+How many times does the printf statement you added get executed? 10
+List in order the numerical values of /sum/ output by
+the printf statement you added:
+1 3 6 10 15 21 28 36 45 55
+
+What is the value of sum output by the program in the final statement?
+55
+
+
+Step #5:
+Recompile, and run the code. Has the output changed? no
+
+Step #6: If you haven't already, create an electronic version of this
+page. You can either keep it as html, or copy it to a text file. Fill
+out the answer sheet with the responses you recorded as you went through
+the lab. Then submit this document using Blackboard.
+
+*** YOU ARE DONE!!! ***

@@ -1,0 +1,4 @@
+# Ignore everything but the .gitignore file.
+# This directory only exists for compiled files to go into.
+*
+!.gitignore

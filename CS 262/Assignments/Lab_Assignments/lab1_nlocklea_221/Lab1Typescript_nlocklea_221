@@ -1,0 +1,43 @@
+Script started on 2021-08-30 16:18:30-04:00
+bash-4.4$ date
+Mon Aug 30 16:18:37 EDT 2021
+bash-4.4$ iname[K[K[K[K[Kuame[K[K[Kname-a[K[K -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ pwd
+/home/nlocklea/CS262/lab1_nlocklea_221
+bash-4.4$ ls
+lab1_nlocklea_221  lab1_nlocklea_221.c	Lab1Typescript_nlocklea_221  Makefile
+bash-4.4$ cat lab1_nlco[K[Kocklea_221.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 1
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Hello world!\n");
+    printf("My name is Nicholas\n");
+    return 0;
+}bash-4.4$ rm lab1 lab1_nlocklea_221.c[K[K
+rm: cannot remove 'lab1': No such file or directory
+bash-4.4$ make all
+gcc -g -Wall -o lab1_nlocklea_221 lab1_nlocklea_221.c
+bash-4.4$ lab1_nlocklea_221[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ks
+lab1_nlocklea_221  lab1_nlocklea_221.c	Lab1Typescript_nlocklea_221  Makefile
+bash-4.4$ la[K[K./lab1_nlpc[K[Kocklea_221
+Hello world!
+My name is Nicholas
+bash-4.4$ gcc -g -Wall -o lab1 lab1_nlocklea_221.c
+bash-4.4$ ls
+lab1  lab1_nlocklea_221  lab1_nlocklea_221.c  Lab1Typescript_nlocklea_221  Makefile
+bash-4.4$ lab1
+bash: lab1: command not found
+bash-4.4$ ./lab1
+Hello world!
+My name is Nicholas
+bash-4.4$ exit
+
+Script done on 2021-08-30 16:21:44-04:00

@@ -1,0 +1,1 @@
+SRCS-y += device.c devnull.c vfscwd.c vfslist.c vfslookup.c vfspath.c vnode.c

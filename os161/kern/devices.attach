@@ -1,0 +1,13 @@
+noattach lamebus
+attach emu * at lamebus *
+attach ltrace * at lamebus *
+attach ltimer * at lamebus *
+attach lrandom * at lamebus *
+attach lhd * at lamebus *
+attach lser * at lamebus *
+attach beep 0 at ltimer *
+attach con 0 at lser *
+attach rtclock 0 at ltimer *
+attach random 0 at lrandom *
+pseudo pseudorand 0
+attach random 0 at pseudorand 0

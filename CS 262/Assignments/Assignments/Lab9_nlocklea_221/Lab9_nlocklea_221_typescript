@@ -1,0 +1,489 @@
+Script started on 2021-11-14 23:34:03-05:00
+bash-4.4$ unal[Kme -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ ls
+Lab9_nlocklea_221.c  Lab9_nlocklea_221_typescript  Makefile
+bash-4.4$ cat Lab9_nlocklea_221.c
+/* Nicholas Locklear
+ * G01090642
+ * CS 211
+ * Lab 9
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <ctype.h>
+
+#define BYTETOBINARYPATTERN "%d%d%d%d%d%d%d%d"
+#define BYTETOBINARY(byte)  \
+  (byte & 0x80 ? 1 : 0), \
+  (byte & 0x40 ? 1 : 0), \
+  (byte & 0x20 ? 1 : 0), \
+  (byte & 0x10 ? 1 : 0), \
+  (byte & 0x08 ? 1 : 0), \
+  (byte & 0x04 ? 1 : 0), \
+  (byte & 0x02 ? 1 : 0), \
+  (byte & 0x01 ? 1 : 0)
+#define PRINTBIN(x) printf(BYTETOBINARYPATTERN, BYTETOBINARY(x));
+#if CHAR_BIT!=8 
+#error Unsupported byte size (CHAR_BIT!=8) 
+#endif
+
+/* Check Ex: 6 */
+int isNumber(char number[]){
+	int i = 0;
+	if (number[0] == '-'){
+		i = 1;
+	}
+	for(i=i; i < strlen(number); i++){
+        	if(!isdigit(number[i])){
+			return 0;
+		}
+    	}
+    return 1;
+}
+
+void setlsbs(unsigned char *p, unsigned char b0){
+	int i;
+	int Bit;
+	Bit = (b0 & 1);
+	printf("Modified Values:\n\n");
+	for(i = 7; i >= 0; i--){
+		p[i] ^= (-Bit ^ p[i]) & (1UL << i);
+		printf("Entry %d is %u : ", (i+1), p[i]);
+		PRINTBIN(p[i]);
+		printf("\n");
+
+	}
+}
+
+unsigned char getlsbs(unsigned char *p){
+	unsigned char x = '1';
+	int i;
+	for(i = 7; i > 0; i--){
+		x ^= (-p[i] ^ x) & (1UL << i);
+
+	}
+	return x;
+}
+
+
+int main(int argc, char *argv[]){
+	int Seed = atoi(argv[1]);
+	int i;
+	unsigned char p[1024];
+	unsigned char byte0;
+	srand(Seed);
+	byte0 = rand() % 255 + 0;
+	printf("Seed: %d\n", Seed);
+	if(isNumber(argv[1]) == 0){
+		printf("Input [%s] is invalid.\n", argv[1]);
+	}
+
+	if (p == NULL){
+        	printf("Error allocating memory. Exiting Program.");
+        exit(1);
+	}
+	printf("Byte0 %u is ", byte0);
+	PRINTBIN(byte0);
+	printf("\n");
+	for(i = 0; i < 8; i ++){
+		p[i] = rand() % 255 + 0;
+		printf("Input %d is %u : ",i +1, p[i]);
+		PRINTBIN(p[i]);
+		printf("  ");
+		p[i] ^= 1UL << 8;
+		printf("%u\n", p[i]);
+		printf("\n");
+
+	}
+
+	setlsbs(p, byte0);
+	printf("Original Bit: %u\n", getlsbs(p));
+	
+	return 0;
+}bash-4.4$ m[Kcat Makefile
+# A simple Makefile
+# Nicholas Locklear G01090642
+# Cs262, 221
+# Lab 6
+# The compiler: gcc for C programs
+
+CC = gcc
+CFLAGS=-g -Wall -std=c89 -pedantic-errors
+TARGET = Lab9_nlocklea_221
+all: $(TARGET)
+
+$(TARGET):$(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+clean:
+	rm $(TARGET)bash-4.4$ make
+gcc -g -Wall -std=c89 -pedantic-errors -o Lab9_nlocklea_221 Lab9_nlocklea_221.c
+bash-4.4$ ls
+Lab9_nlocklea_221  Lab9_nlocklea_221.c	Lab9_nlocklea_221_typescript  Makefile
+bash-4.4$ ./Lab9_nlocklea_221
+Segmentation fault (core dumped)
+bash-4.4$ ./Lab9_nlocklea_221 1
+Seed: 1
+Byte0 163 is 10100011
+Input 1 is 151 : 10010111  151
+
+Input 2 is 162 : 10100010  162
+
+Input 3 is 85 : 01010101  85
+
+Input 4 is 83 : 01010011  83
+
+Input 5 is 190 : 10111110  190
+
+Input 6 is 241 : 11110001  241
+
+Input 7 is 252 : 11111100  252
+
+Input 8 is 249 : 11111001  249
+
+Modified Values:
+
+Entry 8 is 249 : 11111001
+Entry 7 is 252 : 11111100
+Entry 6 is 241 : 11110001
+Entry 5 is 190 : 10111110
+Entry 4 is 91 : 01011011
+Entry 3 is 85 : 01010101
+Entry 2 is 162 : 10100010
+Entry 1 is 151 : 10010111
+Original Bit: 3
+bash-4.4$ ./Lab9_nlocklea_221 1[K2
+Seed: 2
+Byte0 165 is 10100101
+Input 1 is 4 : 00000100  4
+
+Input 2 is 83 : 01010011  83
+
+Input 3 is 140 : 10001100  140
+
+Input 4 is 231 : 11100111  231
+
+Input 5 is 228 : 11100100  228
+
+Input 6 is 39 : 00100111  39
+
+Input 7 is 252 : 11111100  252
+
+Input 8 is 70 : 01000110  70
+
+Modified Values:
+
+Entry 8 is 198 : 11000110
+Entry 7 is 252 : 11111100
+Entry 6 is 39 : 00100111
+Entry 5 is 244 : 11110100
+Entry 4 is 239 : 11101111
+Entry 3 is 140 : 10001100
+Entry 2 is 83 : 01010011
+Entry 1 is 5 : 00000101
+Original Bit: 5
+bash-4.4$ ./Lab9_nlocklea_221 212
+Seed: 212
+Byte0 164 is 10100100
+Input 1 is 30 : 00011110  30
+
+Input 2 is 4 : 00000100  4
+
+Input 3 is 220 : 11011100  220
+
+Input 4 is 81 : 01010001  81
+
+Input 5 is 117 : 01110101  117
+
+Input 6 is 85 : 01010101  85
+
+Input 7 is 79 : 01001111  79
+
+Input 8 is 174 : 10101110  174
+
+Modified Values:
+
+Entry 8 is 46 : 00101110
+Entry 7 is 15 : 00001111
+Entry 6 is 85 : 01010101
+Entry 5 is 101 : 01100101
+Entry 4 is 81 : 01010001
+Entry 3 is 216 : 11011000
+Entry 2 is 4 : 00000100
+Entry 1 is 30 : 00011110
+Original Bit: 249
+bash-4.4$ ./Lab9_nlocklea_221 2123
+Seed: 2123
+Byte0 65 is 01000001
+Input 1 is 27 : 00011011  27
+
+Input 2 is 64 : 01000000  64
+
+Input 3 is 231 : 11100111  231
+
+Input 4 is 62 : 00111110  62
+
+Input 5 is 237 : 11101101  237
+
+Input 6 is 4 : 00000100  4
+
+Input 7 is 225 : 11100001  225
+
+Input 8 is 183 : 10110111  183
+
+Modified Values:
+
+Entry 8 is 183 : 10110111
+Entry 7 is 225 : 11100001
+Entry 6 is 36 : 00100100
+Entry 5 is 253 : 11111101
+Entry 4 is 62 : 00111110
+Entry 3 is 231 : 11100111
+Entry 2 is 66 : 01000010
+Entry 1 is 27 : 00011011
+Original Bit: 3
+bash-4.4$ ./Lab9_nlocklea_221 21235
+Seed: 21235
+Byte0 14 is 00001110
+Input 1 is 120 : 01111000  120
+
+Input 2 is 168 : 10101000  168
+
+Input 3 is 18 : 00010010  18
+
+Input 4 is 251 : 11111011  251
+
+Input 5 is 163 : 10100011  163
+
+Input 6 is 243 : 11110011  243
+
+Input 7 is 250 : 11111010  250
+
+Input 8 is 88 : 01011000  88
+
+Modified Values:
+
+Entry 8 is 88 : 01011000
+Entry 7 is 186 : 10111010
+Entry 6 is 211 : 11010011
+Entry 5 is 163 : 10100011
+Entry 4 is 243 : 11110011
+Entry 3 is 18 : 00010010
+Entry 2 is 168 : 10101000
+Entry 1 is 120 : 01111000
+Original Bit: 253
+bash-4.4$ ./Lab9_nlocklea_221 2123543
+Seed: 2123543
+Byte0 72 is 01001000
+Input 1 is 235 : 11101011  235
+
+Input 2 is 185 : 10111001  185
+
+Input 3 is 18 : 00010010  18
+
+Input 4 is 199 : 11000111  199
+
+Input 5 is 203 : 11001011  203
+
+Input 6 is 231 : 11100111  231
+
+Input 7 is 209 : 11010001  209
+
+Input 8 is 50 : 00110010  50
+
+Modified Values:
+
+Entry 8 is 50 : 00110010
+Entry 7 is 145 : 10010001
+Entry 6 is 199 : 11000111
+Entry 5 is 203 : 11001011
+Entry 4 is 199 : 11000111
+Entry 3 is 18 : 00010010
+Entry 2 is 185 : 10111001
+Entry 1 is 234 : 11101010
+Original Bit: 255
+bash-4.4$ ./Lab9_nlocklea_221 2123543[K[K[K[K22
+Seed: 21222
+Byte0 149 is 10010101
+Input 1 is 175 : 10101111  175
+
+Input 2 is 208 : 11010000  208
+
+Input 3 is 135 : 10000111  135
+
+Input 4 is 161 : 10100001  161
+
+Input 5 is 252 : 11111100  252
+
+Input 6 is 124 : 01111100  124
+
+Input 7 is 16 : 00010000  16
+
+Input 8 is 194 : 11000010  194
+
+Modified Values:
+
+Entry 8 is 194 : 11000010
+Entry 7 is 80 : 01010000
+Entry 6 is 124 : 01111100
+Entry 5 is 252 : 11111100
+Entry 4 is 169 : 10101001
+Entry 3 is 135 : 10000111
+Entry 2 is 210 : 11010010
+Entry 1 is 175 : 10101111
+Original Bit: 3
+bash-4.4$ ./Lab9_nlocklea_221 21222[K12
+Seed: 212212
+Byte0 107 is 01101011
+Input 1 is 189 : 10111101  189
+
+Input 2 is 232 : 11101000  232
+
+Input 3 is 106 : 01101010  106
+
+Input 4 is 50 : 00110010  50
+
+Input 5 is 191 : 10111111  191
+
+Input 6 is 187 : 10111011  187
+
+Input 7 is 149 : 10010101  149
+
+Input 8 is 217 : 11011001  217
+
+Modified Values:
+
+Entry 8 is 217 : 11011001
+Entry 7 is 213 : 11010101
+Entry 6 is 187 : 10111011
+Entry 5 is 191 : 10111111
+Entry 4 is 58 : 00111010
+Entry 3 is 110 : 01101110
+Entry 2 is 234 : 11101010
+Entry 1 is 189 : 10111101
+Original Bit: 3
+bash-4.4$ ./Lab9_nlocklea_221 212212[K[K[K3[K[K[K[K[K3[K 312
+Seed: 312
+Byte0 104 is 01101000
+Input 1 is 65 : 01000001  65
+
+Input 2 is 228 : 11100100  228
+
+Input 3 is 131 : 10000011  131
+
+Input 4 is 19 : 00010011  19
+
+Input 5 is 115 : 01110011  115
+
+Input 6 is 56 : 00111000  56
+
+Input 7 is 116 : 01110100  116
+
+Input 8 is 72 : 01001000  72
+
+Modified Values:
+
+Entry 8 is 72 : 01001000
+Entry 7 is 52 : 00110100
+Entry 6 is 24 : 00011000
+Entry 5 is 99 : 01100011
+Entry 4 is 19 : 00010011
+Entry 3 is 131 : 10000011
+Entry 2 is 228 : 11100100
+Entry 1 is 64 : 01000000
+Original Bit: 253
+bash-4.4$ ./Lab9_nlocklea_221 312[K[K[K31
+Seed: 31
+Byte0 236 is 11101100
+Input 1 is 18 : 00010010  18
+
+Input 2 is 185 : 10111001  185
+
+Input 3 is 125 : 01111101  125
+
+Input 4 is 6 : 00000110  6
+
+Input 5 is 224 : 11100000  224
+
+Input 6 is 192 : 11000000  192
+
+Input 7 is 118 : 01110110  118
+
+Input 8 is 49 : 00110001  49
+
+Modified Values:
+
+Entry 8 is 49 : 00110001
+Entry 7 is 54 : 00110110
+Entry 6 is 192 : 11000000
+Entry 5 is 224 : 11100000
+Entry 4 is 6 : 00000110
+Entry 3 is 121 : 01111001
+Entry 2 is 185 : 10111001
+Entry 1 is 18 : 00010010
+Original Bit: 207
+bash-4.4$ ./Lab9_nlocklea_221 31[K1[K2
+Seed: 32
+Byte0 203 is 11001011
+Input 1 is 69 : 01000101  69
+
+Input 2 is 207 : 11001111  207
+
+Input 3 is 18 : 00010010  18
+
+Input 4 is 27 : 00011011  27
+
+Input 5 is 101 : 01100101  101
+
+Input 6 is 197 : 11000101  197
+
+Input 7 is 128 : 10000000  128
+
+Input 8 is 28 : 00011100  28
+
+Modified Values:
+
+Entry 8 is 156 : 10011100
+Entry 7 is 192 : 11000000
+Entry 6 is 229 : 11100101
+Entry 5 is 117 : 01110101
+Entry 4 is 27 : 00011011
+Entry 3 is 22 : 00010110
+Entry 2 is 207 : 11001111
+Entry 1 is 69 : 01000101
+Original Bit: 65
+bash-4.4$ ./Lab9_nlocklea_221 325
+Seed: 325
+Byte0 74 is 01001010
+Input 1 is 75 : 01001011  75
+
+Input 2 is 240 : 11110000  240
+
+Input 3 is 99 : 01100011  99
+
+Input 4 is 8 : 00001000  8
+
+Input 5 is 100 : 01100100  100
+
+Input 6 is 166 : 10100110  166
+
+Input 7 is 98 : 01100010  98
+
+Input 8 is 111 : 01101111  111
+
+Modified Values:
+
+Entry 8 is 111 : 01101111
+Entry 7 is 34 : 00100010
+Entry 6 is 134 : 10000110
+Entry 5 is 100 : 01100100
+Entry 4 is 0 : 00000000
+Entry 3 is 99 : 01100011
+Entry 2 is 240 : 11110000
+Entry 1 is 74 : 01001010
+Original Bit: 245
+bash-4.4$ exit
+
+Script done on 2021-11-14 23:36:35-05:00

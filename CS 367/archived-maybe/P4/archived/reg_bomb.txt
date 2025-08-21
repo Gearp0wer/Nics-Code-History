@@ -1,0 +1,105 @@
+   x0x400db6 <main>         push   %rbx                                                                                                                                                     x
+   x0x400db7 <main+1>       cmp    $0x1,%edi                                                                                                                                                x
+   x0x400dba <main+4>       je     0x400ea8 <main+242>                                                                                                                                      x
+   x0x400dc0 <main+10>      mov    %rsi,%rbx                                                                                                                                                x
+   x0x400dc3 <main+13>      cmp    $0x2,%edi                                                                                                                                                x
+   x0x400dc6 <main+16>      jne    0x400ed6 <main+288>                                                                                                                                      x
+   x0x400dcc <main+22>      mov    0x8(%rsi),%rdi                                                                                                                                           x
+   x0x400dd0 <main+26>      mov    $0x402360,%esi                                                                                                                                           x
+   x0x400dd5 <main+31>      callq  0x400c50 <fopen@plt>                                                                                                                                     x
+   x0x400dda <main+36>      mov    %rax,0x2039cf(%rip)        # 0x6047b0 <infile>                                                                                                           x
+   x0x400de1 <main+43>      test   %rax,%rax                                                                                                                                                x
+   x0x400de4 <main+46>      je     0x400ebb <main+261>                                                                                                                                      x
+   x0x400dea <main+52>      callq  0x4013f5 <initialize_bomb>                                                                                                                               x
+   x0x400def <main+57>      mov    $0x4023e8,%edi                                                                                                                                           x
+   x0x400df4 <main+62>      callq  0x400b70 <puts@plt>                                                                                                                                      x
+   x0x400df9 <main+67>      mov    $0x402428,%edi                                                                                                                                           x
+   x0x400dfe <main+72>      callq  0x400b70 <puts@plt>                                                                                                                                      x
+   x0x400e03 <main+77>      callq  0x40152a <read_line>                                                                                                                                     x
+   x0x400e08 <main+82>      mov    %rax,%rdi                                                                                                                                                x
+   x0x400e0b <main+85>      callq  0x400ef2 <phase_1>                                                                                                                                       x
+   x0x400e10 <main+90>      callq  0x40172f <phase_defused>                                                                                                                                 x
+   x0x400e15 <main+95>      mov    $0x402458,%edi                                                                                                                                           x
+   x0x400e1a <main+100>     callq  0x400b70 <puts@plt>                                                                                                                                      x
+   x0x400e1f <main+105>     callq  0x40152a <read_line>                                                                                                                                     x
+   x0x400e24 <main+110>     mov    %rax,%rdi         
+
+
+
+                                                                                                                                       x
+   x0x400e27 <main+113>     callq  0x400f10 <phase_2>                                                                                                                                       x
+   x0x400e2c <main+118>     callq  0x40172f <phase_defused>                                                                                                                                 x
+   x0x400e31 <main+123>     mov    $0x402399,%edi                                                                                                                                           x
+   x0x400e36 <main+128>     callq  0x400b70 <puts@plt>                                                                                                                                      x
+   x0x400e3b <main+133>     callq  0x40152a <read_line>                                                                                                                                     x
+   x0x400e40 <main+138>     mov    %rax,%rdi    
+
+
+
+
+
+
+
+
+   x0x400db6 <main>         push   %rbx                                                                                                                                                     x
+   x0x400db7 <main+1>       cmp    $0x1,%edi                                                                                                                                                x
+   x0x400dba <main+4>       je     0x400ea8 <main+242>                                                                                                                                      x
+   x0x400dc0 <main+10>      mov    %rsi,%rbx                                                                                                                                                x
+   x0x400dc3 <main+13>      cmp    $0x2,%edi                                                                                                                                                x
+   x0x400dc6 <main+16>      jne    0x400ed6 <main+288>                                                                                                                                      x
+   x0x400dcc <main+22>      mov    0x8(%rsi),%rdi                                                                                                                                           x
+   x0x400dd0 <main+26>      mov    $0x402360,%esi                                                                                                                                           x
+   x0x400dd5 <main+31>      callq  0x400c50 <fopen@plt>                                                                                                                                     x
+   x0x400dda <main+36>      mov    %rax,0x2039cf(%rip)        # 0x6047b0 <infile>                                                                                                           x
+   x0x400de1 <main+43>      test   %rax,%rax                                                                                                                                                x
+   x0x400de4 <main+46>      je     0x400ebb <main+261>                                                                                                                                      x
+   x0x400dea <main+52>      callq  0x4013f5 <initialize_bomb>                                                                                                                               x
+   x0x400def <main+57>      mov    $0x4023e8,%edi                                                                                                                                           x
+   x0x400df4 <main+62>      callq  0x400b70 <puts@plt>    	
+
+
+functions 
+
+0x0000000000400b00  _init
+0x0000000000400b30  getenv@plt
+0x0000000000400b40  strcasecmp@plt
+0x0000000000400b50  __errno_location@plt
+0x0000000000400b60  strcpy@plt
+0x0000000000400b70  puts@plt
+0x0000000000400b80  write@plt
+0x0000000000400b90  printf@plt
+0x0000000000400ba0  alarm@plt
+0x0000000000400bb0  close@plt
+0x0000000000400bc0  read@plt
+0x0000000000400bd0  fgets@plt
+0x0000000000400be0  signal@plt
+0x0000000000400bf0  gethostbyname@plt
+0x0000000000400c00  fprintf@plt
+0x0000000000400c10  strtol@plt
+0x0000000000400c20  fflush@plt
+0x0000000000400c30  __isoc99_sscanf@plt
+0x0000000000400c40  memmove@plt
+0x0000000000400c50  fopen@plt
+0x0000000000400c60  gethostname@plt
+0x0000000000400c70  sprintf@plt
+0x0000000000400c80  exit@plt
+0x0000000000400c90  connect@plt
+0x0000000000400ca0  sleep@plt
+0x0000000000400cb0  __ctype_b_loc@plt
+0x0000000000400cc0  socket@plt
+0x0000000000400cd0  .annobin_elf_init.c.exit
+0x0000000000400cd0  .annobin_elf_init.c.hot
+0x0000000000400cd0  .annobin_elf_init.c.startup
+0x0000000000400cd0  .annobin_elf_init.c.unlikely
+0x0000000000400cd0  .annobin_elf_init.c_end.exit
+0x0000000000400cd0  .annobin_elf_init.c_end.hot
+0x0000000000400cd0  .annobin_elf_init.c_end.startup
+0x0000000000400cd0  .annobin_elf_init.c_end.unlikely
+0x0000000000400cd0  .annobin_init.c.exit
+0x0000000000400cd0  .annobin_init.c.hot
+0x0000000000400cd0  .annobin_init.c.startup
+0x0000000000400cd0  .annobin_init.c.unlikely
+0x0000000000400cd0  .annobin_init.c_end.exit
+0x0000000000400cd0  .annobin_init.c_end.hot
+0x0000000000400cd0  .annobin_init.c_end.startup
+0x0000000000400cd0  .annobin_init.c_end.unlikely

@@ -1,0 +1,455 @@
+SQL> @nlocklea_p1-3.sql
+drop table Building
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+)
+*
+ERROR at line 5:
+ORA-00904: : invalid identifier 
+
+
+INSERT  INTO Building
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Building
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table Room
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    buildingName CHAR(20) PRIMARY KEY,
+                          *
+ERROR at line 3:
+ORA-02260: table can have only one primary key 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+DROP table Department
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    departmentName CHAR(20) PRIMARY KEY,
+                            *
+ERROR at line 3:
+ORA-02260: table can have only one primary key 
+
+
+INSERT  INTO Department
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Department
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Department
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+DROP table MailAddress
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    FOREIGN KEY (addressee) REFERENCES Department(deparmentName)
+                                       *
+ERROR at line 7:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO MailAddress
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO MailAddress
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO MailAddress
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table Employee
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    FOREIGN KEY (roomNumber, buildingName) REFERENCES Room(roomNumber, buildingName),
+                                                      *
+ERROR at line 10:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+DROP table Measurements
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SP2-0042: unknown command ")" - rest of line ignored.
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> @nlocklea_p1-3.sql
+)
+*
+ERROR at line 5:
+ORA-00904: : invalid identifier 
+
+
+INSERT  INTO Building
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Building
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table Room
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    buildingName CHAR(20) PRIMARY KEY,
+                          *
+ERROR at line 3:
+ORA-02260: table can have only one primary key 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Room
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+DROP table Department
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    departmentName CHAR(20) PRIMARY KEY,
+                            *
+ERROR at line 3:
+ORA-02260: table can have only one primary key 
+
+
+INSERT  INTO Department
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Department
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Department
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+DROP table MailAddress
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    FOREIGN KEY (addressee) REFERENCES Department(deparmentName)
+                                       *
+ERROR at line 7:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO MailAddress
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO MailAddress
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO MailAddress
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table Employee
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+    FOREIGN KEY (roomNumber, buildingName) REFERENCES Room(roomNumber, buildingName),
+                                                      *
+ERROR at line 10:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Employee
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+DROP table Measurements
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SP2-0042: unknown command ")" - rest of line ignored.
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT  INTO Measurements
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> quit

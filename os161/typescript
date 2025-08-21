@@ -1,0 +1,10 @@
+Script started on 2024-12-09 21:16:11-05:00
+bash-4.4$ cd root
+bash-4.4$ ls
+bin  DISK1.img	DISK2.img  kernel  Makefile  output-errors.txt	output.txt  sbin  sys161.conf  testbin	typescript
+bash-4.4$ p /sbin/poweroff
+bash: p: command not found
+bash-4.4$ exit
+exit
+
+Script done on 2024-12-09 21:17:53-05:00
