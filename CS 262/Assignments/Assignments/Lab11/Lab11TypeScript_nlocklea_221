@@ -1,0 +1,173 @@
+Script started on 2021-11-29 13:29:23-05:00
+bash-4.4$ uname -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ time
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+bash-4.4$ [Kbash-4.4$ date
+Mon Nov 29 13:29:34 EST 2021
+bash-4.4$ ls [K
+bin  inc  Lab11_nlocklea_221  lib  Makefile  obj  src
+bash-4.4$ cd src
+bash-4.4$ ls
+Function1.c  Function2.c  Function3.c  Function4.c  Function5.c  Lab11.c
+bash-4.4$ cd i[K..
+bash-4.4$ cd inc 
+bash-4.4$ ls
+Function1.h  Function2.h  Function3.h  Function4.h  Function5.h  Lab11.h
+bash-4.4$ cd ..
+bash-4.4$ cd i[Kbin
+bash-4.4$ ls
+bash-4.4$ cd ..
+bash-4.4$ cd obj
+bash-4.4$ ls
+bash-4.4$ cd ..
+bash-4.4$ cd inc
+bash-4.4$ ls
+Function1.h  Function2.h  Function3.h  Function4.h  Function5.h  Lab11.h
+bash-4.4$ cd ..
+bash-4.4$ cd lib
+bash-4.4$ ls
+bash-4.4$ cd ..
+bash-4.4$ make
+gcc -O0 -I./inc -g -c src/Lab11.c -o obj/Lab11.o
+[01m[Ksrc/Lab11.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Ksrc/Lab11.c:13:5:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KFunction1[m[K’; did you mean ‘[01m[KFunction5[m[K’? [[01;35m[K-Wimplicit-function-declaration[m[K]
+     [01;35m[KFunction1[m[K();
+     [01;35m[K^~~~~~~~~[m[K
+     [32m[KFunction5[m[K
+gcc -O0 -I./inc -g -c src/Function1.c -o obj/Function1.o
+gcc -O0 -I./inc -g -c src/Function2.c -o obj/Function2.o
+gcc -O0 -I./inc -g -c src/Function3.c -o obj/Function3.o
+gcc -O0 -I./inc -g -c src/Function4.c -o obj/Function4.o
+gcc -O0 -I./inc -g -c src/Function5.c -o obj/Function5.o
+gcc -O0 -I./inc -g -o bin/Lab11_nlocklea_221.c ./obj/Lab11.o ./obj/Function1.o ./obj/Function2.o ./obj/Function3.o ./obj/Function4.o ./obj/Function5.o
+bash-4.4$ ./Labb[K11[K[K[K[K[K[K[Kcd bin
+bash-4.4$ ./Lab11)[K_nlocklea_221.c
+In Function1()...
+function1(): i = 0,p[i] = 0 
+function1(): i = 1,p[i] = 1 
+function1(): i = 2,p[i] = 2 
+function1(): i = 3,p[i] = 3 
+function1(): i = 4,p[i] = 4 
+function1(): i = 5,p[i] = 5 
+function1(): i = 6,p[i] = 6 
+function1(): i = 7,p[i] = 7 
+function1(): i = 8,p[i] = 8 
+function1(): i = 9,p[i] = 9 
+In function2()...
+function2(): i = 0,p[i] = 0 
+function2(): i = 1,p[i] = 1 
+function2(): i = 2,p[i] = 2 
+function2(): i = 3,p[i] = 3 
+function2(): i = 4,p[i] = 4 
+function2(): i = 5,p[i] = 5 
+function2(): i = 6,p[i] = 6 
+function2(): i = 7,p[i] = 7 
+function2(): i = 8,p[i] = 8 
+function2(): i = 9,p[i] = 9 
+In Function3()...
+Function3(): i = 0,p[i] = 0 
+Function3(): i = 1,p[i] = 1 
+Function3(): i = 2,p[i] = 2 
+Function3(): i = 3,p[i] = 3 
+Function3(): i = 4,p[i] = 4 
+Function3(): i = 5,p[i] = 5 
+Function3(): i = 6,p[i] = 6 
+Function3(): i = 7,p[i] = 7 
+Function3(): i = 8,p[i] = 8 
+Function3(): i = 9,p[i] = 9 
+In Function4()...
+Function4(): i = 0,p[i] = 0 
+Function4(): i = 1,p[i] = 1 
+Function4(): i = 2,p[i] = 2 
+Function4(): i = 3,p[i] = 3 
+Function4(): i = 4,p[i] = 4 
+Function4(): i = 5,p[i] = 5 
+Function4(): i = 6,p[i] = 6 
+Function4(): i = 7,p[i] = 7 
+Function4(): i = 8,p[i] = 8 
+Function4(): i = 9,p[i] = 9 
+In Function5()...
+Function5(): i = 0,p[i] = 0 
+Function5(): i = 1,p[i] = 1 
+Function5(): i = 2,p[i] = 2 
+Function5(): i = 3,p[i] = 3 
+Function5(): i = 4,p[i] = 4 
+Function5(): i = 5,p[i] = 5 
+Function5(): i = 6,p[i] = 6 
+Function5(): i = 7,p[i] = 7 
+Function5(): i = 8,p[i] = 8 
+Function5(): i = 9,p[i] = 9 
+bash-4.4$ cd ..
+bash-4.4$ cd lib
+bash-4.4$ ar rc libLab11.a ../obj/*.o
+bash-4.4$ cd ..
+bash-4.4$ gcc -o bin/Lab11_fromlib[K[K[K_lib -T[KI./inc se[Krc [K/Lab11.c -L./lib -lLab``[K[K11
+[01m[Ksrc/Lab11.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Ksrc/Lab11.c:13:5:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KFunction1[m[K’; did you mean ‘[01m[KFunction5[m[K’? [[01;35m[K-Wimplicit-function-declaration[m[K]
+     [01;35m[KFunction1[m[K();
+     [01;35m[K^~~~~~~~~[m[K
+     [32m[KFunction5[m[K
+bash-4.4$ cd bin
+bash-4.4$ ./Lab11_from)[K_L[Klib
+In Function1()...
+function1(): i = 0,p[i] = 0 
+function1(): i = 1,p[i] = 1 
+function1(): i = 2,p[i] = 2 
+function1(): i = 3,p[i] = 3 
+function1(): i = 4,p[i] = 4 
+function1(): i = 5,p[i] = 5 
+function1(): i = 6,p[i] = 6 
+function1(): i = 7,p[i] = 7 
+function1(): i = 8,p[i] = 8 
+function1(): i = 9,p[i] = 9 
+In function2()...
+function2(): i = 0,p[i] = 0 
+function2(): i = 1,p[i] = 1 
+function2(): i = 2,p[i] = 2 
+function2(): i = 3,p[i] = 3 
+function2(): i = 4,p[i] = 4 
+function2(): i = 5,p[i] = 5 
+function2(): i = 6,p[i] = 6 
+function2(): i = 7,p[i] = 7 
+function2(): i = 8,p[i] = 8 
+function2(): i = 9,p[i] = 9 
+In Function3()...
+Function3(): i = 0,p[i] = 0 
+Function3(): i = 1,p[i] = 1 
+Function3(): i = 2,p[i] = 2 
+Function3(): i = 3,p[i] = 3 
+Function3(): i = 4,p[i] = 4 
+Function3(): i = 5,p[i] = 5 
+Function3(): i = 6,p[i] = 6 
+Function3(): i = 7,p[i] = 7 
+Function3(): i = 8,p[i] = 8 
+Function3(): i = 9,p[i] = 9 
+In Function4()...
+Function4(): i = 0,p[i] = 0 
+Function4(): i = 1,p[i] = 1 
+Function4(): i = 2,p[i] = 2 
+Function4(): i = 3,p[i] = 3 
+Function4(): i = 4,p[i] = 4 
+Function4(): i = 5,p[i] = 5 
+Function4(): i = 6,p[i] = 6 
+Function4(): i = 7,p[i] = 7 
+Function4(): i = 8,p[i] = 8 
+Function4(): i = 9,p[i] = 9 
+In Function5()...
+Function5(): i = 0,p[i] = 0 
+Function5(): i = 1,p[i] = 1 
+Function5(): i = 2,p[i] = 2 
+Function5(): i = 3,p[i] = 3 
+Function5(): i = 4,p[i] = 4 
+Function5(): i = 5,p[i] = 5 
+Function5(): i = 6,p[i] = 6 
+Function5(): i = 7,p[i] = 7 
+Function5(): i = 8,p[i] = 8 
+Function5(): i = 9,p[i] = 9 
+bash-4.4$ exit
+
+Script done on 2021-11-29 13:41:35-05:00

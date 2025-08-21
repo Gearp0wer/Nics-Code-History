@@ -1,0 +1,119 @@
+Script started on 2021-09-10 18:01:24-04:00
+bash-4.4$ date
+Fri Sep 10 18:01:30 EDT 2021
+bash-4.4$ unale[K[Kme -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ pwd
+/home/nlocklea/CS262/Lab_Assignments/Lab3_nlocklea_221
+bash-4.4$ ls
+Lab3_nlocklea_221_Q1	Lab3_nlocklea_221_Q2.c	Lab3_Typescript_nlocklea_221
+Lab3_nlocklea_221_Q1.c	Lab3_nlocklea_221_Q3	Makefile
+Lab3_nlocklea_221_Q2	Lab3_nlocklea_221_Q3.c
+bash-4.4$ cat :[KLab3_nlocklea_221_Q1.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 3 Q1
+ */
+
+#include <stdio.h>
+
+int main(){
+	int variable;
+	for(variable = 2; variable < 20; variable += 2){
+		printf("value of variable: %d\n", variable);
+	}
+	return 0;
+}bash-4.4$ rm Lab3)[K_nlocke[Klea_221_Q1
+bash-4.4$ cat L[KLab3_nlocklea_221_Q2.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 3 Q2
+ */
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+	int var;
+	int initial;
+	int sum;
+	printf("Enter an integer: ");
+	scanf("%d", &var);	
+	
+	/* do loop execution */
+   	LOOP:do {
+   
+      		if( initial %3 ==0) {
+         		/* skip the iteration */
+         		sum = sum + initial;
+			initial++;
+         		goto LOOP;
+      		}
+		if( initial %5 ==0) {
+	         	/* skip the iteration */
+	         	sum = sum + initial;
+			initial++;
+			
+	         	goto LOOP;
+		}
+
+		
+      	initial++;
+
+   	}while( initial <= var );
+	printf("Sum = %d", sum); 
+   	return 0;
+
+}
+bash-4.4$ rm Lab3_nlocklea_221_Q2
+bash-4.4$ cat Lab3_nlocklea_221_Q3.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 3 Q3
+ */
+
+#include<ctype.h>
+#include<stdio.h>
+
+enum datatype {JAN, FEB, MAR, APR, MAY, JUN};
+int main(){
+        int input;
+        printf("Please enter an integer: ");
+        scanf("%d", &input);
+	enum datatype month = input -1;
+        switch(month){
+                case JAN:
+                        printf("This is the first month");
+                        break;
+                case FEB:
+                        printf("This is the second month");
+                        break;
+                case MAR:
+                        printf("This is the third month");
+                        break;
+                default:
+                        printf("This is not one of the first three months");
+
+        }
+
+
+
+        return 0;
+}
+bash-4.4$ rm Lab3_nlocklea_221_Q3
+bash-4.4$ makeall
+bash: makeall: command not found
+bash-4.4$ make all
+cc     Lab3_nlocklea_221_Q1.c   -o Lab3_nlocklea_221_Q1
+cc     Lab3_nlocklea_221_Q2.c   -o Lab3_nlocklea_221_Q2
+cc     Lab3_nlocklea_221_Q3.c   -o Lab3_nlocklea_221_Q3
+bash-4.4$ ls
+Lab3_nlocklea_221_Q1	Lab3_nlocklea_221_Q2.c	Lab3_Typescript_nlocklea_221
+Lab3_nlocklea_221_Q1.c	Lab3_nlocklea_221_Q3	Makefile
+Lab3_nlocklea_221_Q2	Lab3_nlocklea_221_Q3.c
+bash-4.4$ exit
+
+Script done on 2021-09-10 18:04:48-04:00

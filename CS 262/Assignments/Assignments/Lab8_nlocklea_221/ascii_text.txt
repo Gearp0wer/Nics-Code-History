@@ -1,0 +1,30 @@
+6738.2342
+23011.6540
+-54238.3462
+47231.0000
+4.7204
+-563.6238
+0.0024
+7892245.5238
+-64927864.6289
+262.2018
+The quick brown fox jumped
+over the lazy dog.
+To program or not to program...
+George Mason University
+Department of Computer Science
+CS262 is an awesome class!
+The C Programming Language
+is superior to all other languages
+including Latin, Old Norse, Beothuk,
+and Sumerian!
+6738
+23011
+-54238
+47231
+4
+-563
+528032
+7892245
+-64927864
+262

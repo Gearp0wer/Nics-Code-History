@@ -1,0 +1,52 @@
+Extra Credit
+Debugging Code with GDB
+
+Answer Sheet
+
+Name:Nicholas Locklear, G01090642
+
+Lab Section: 221
+
+Complete this answer sheet using the instructions given in the lab. Submit an electronic file containing the answers to Blackboard by the due date of the lab. All questions are worth 1/2 point, with the exception of question 17 (the last question) which is worth 2 points.
+
+Compiling
+1) Write the size (in bytes) of the executable [17840 bytes] (Note: The size in bytes is the number immediately before the date in the output from the ls -l command)
+
+2) Now, recompile using the -g command line option and write the size in bytes of the new executable: [20912]
+
+Starting GDB
+3) Copy the first line that is printed when you run gdb: GNU GDB (GDB) Red Hat Enterprise Linux 8.2-15.e18
+
+4) Now, copy the portion in the quotes on the line that states "This GDB was configured as." For instance, in the example above, you would copy i686-linux-gnu: x86_64-redhat-linux-gnuGetting Help
+5) Write the number of topics/classes: 12
+
+6) Now, type "help break" to get specific information:
+Write the first line printed after executing the command here: Set breakpoint at specified location
+
+Running a Program
+7) Try it now. What happened? Process exited normally, (Inferior 1)
+
+8) Try the run command again, this time adding "1" (without quotes) to the command line. What happened this time? printed "the sum of the integers from 0 to 10 is: 1013"
+
+Setting Breakpoints
+9) At what line number does execution pause? 55
+
+A Brief Digression
+10) Write what you see as a result: $1=1
+
+Stepping Through Code
+11) Use the print statement mentioned above to print the current value of sum. What is its current value? $2 = 0
+
+12) Now, use the step command step over the current line. At what line does the execution pause? 61
+13) Print the value of sum again. What is its value now? $3 = 1
+
+14) Continue stepping through the program until the following line is reached:
+sum += sum + i;
+
+15) Print the value of sum: $4 = 1s
+
+Displaying Variables
+16) What is the value of the variable 'i' at this point? 6
+
+17) Once you see what the bug(s) is/are, describe it/them below (2 points):
+Sum is adding values it shouldnt, though I cant grasp where Sum is getting these extra values. 

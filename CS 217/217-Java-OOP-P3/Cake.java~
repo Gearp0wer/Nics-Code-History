@@ -1,0 +1,6 @@
+public abstract class Cake implements Dessert {
+  
+  public String description(){
+    return "Cake";
+  }
+}

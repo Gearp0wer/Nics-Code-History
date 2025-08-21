@@ -1,0 +1,22 @@
+public class IceCream extends FrozenDessert {
+  
+    public double baseCost(){
+    double running_total = 0.0;
+    Ingredient[] IList = ingredientsNeeded();
+    for(Ingredient I : IList){
+      running_total+= I.getPrice();
+    }
+    return running_total;
+  }
+//_____________________________________________________________________________________________________________________    
+  public Ingredient[] ingredientsNeeded(){
+    Ingredient[] ingredientList = new Ingredient[]{ Ingredient.Milk, Ingredient.Sugar, Ingredient.Gelatin, 
+      Ingredient.Eggs, Ingredient.Flavoring};
+    return ingredientList;
+  }
+//_____________________________________________________________________________________________________________________    
+  @Override
+  public String description(){
+    return "Ice Cream";
+  }
+}

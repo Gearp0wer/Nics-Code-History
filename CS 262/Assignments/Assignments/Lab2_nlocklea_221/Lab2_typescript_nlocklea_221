@@ -1,0 +1,99 @@
+Script started on 2021-09-13 11:59:12-04:00
+bash-4.4$ uname -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ ls
+lab2_nlocklea_221.c  Lab2_typescript_nlocklea_221  Makefile
+bash-4.4$ cat l[KLab2_nlocklea[K[K[K[K[K[K[K[K[K[K[K[K[Klab2_nlocklea_221.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 2
+ */
+
+#include<ctype.h>
+#include<stdio.h>
+#include <math.h>
+
+int main(){
+
+/* Constant and variable declaration */
+	#define CONST_ONE 0.007184
+	#define CONST_TWO 0.425
+	#define CONST_THREE 0.725
+	float height;
+	float weight;
+	double BSA;
+
+/* the scanner to read input and calc BSA */
+	printf("Please enter a weight in Kg: ");
+	scanf("%f", &weight);
+	printf("Please enter a height in cm: ");
+	scanf("%f", &height);
+	BSA = (CONST_ONE * (pow(weight, CONST_TWO)) * (pow(height, CONST_THREE)));
+
+/* output statements */	
+	printf("The Height is: %.1f cms\n", height);
+	printf("The Weight is: %.1f kgs\n", weight);
+	printf("BSA: %.4f meter square\n", BSA);
+
+	return 0;
+}
+bash-4.4$ make all
+gcc -g -Wall -std=c89 -pedantic-errors -o lab2_nlocklea_221 lab2_nlocklea_221.c -lm
+bash-4.4$ cat Makefile
+# A simple Makefile
+# Nicholas Locklear G01090642
+# Cs262, 221
+# Lab 2
+
+CFLAGS=-g -Wall -std=c89 -pedantic-errors
+
+LIBS=-lm
+
+all: lab2_nlocklea_221.c
+	gcc $(CFLAGS) -o lab2_nlocklea_221 lab2_nlocklea_221.c -lm
+
+clean:
+	rm lab2_nlocklea_221bash-4.4$ rm[K[Kmake cla[Kean
+rm lab2_nlocklea_221
+bash-4.4$ make all
+gcc -g -Wall -std=c89 -pedantic-errors -o lab2_nlocklea_221 lab2_nlocklea_221.c -lm
+bash-4.4$ ls
+lab2_nlocklea_221  lab2_nlocklea_221.c	Lab2_typescript_nlocklea_221  Makefile
+bash-4.4$ ./L[Klab2_nlocklea_221
+Please enter a weight in Kg: 180.3
+Please enter a height in cm: 1505 .5
+The Height is: 150.5 cms
+The Weight is: 180.3 kgs
+BSA: 2.4767 meter square
+bash-4.4$ ./lab2_nlocklea_221
+Please enter a weight in Kg: 167.3
+Please enter a height in cm: 100.7
+The Height is: 100.7 cms
+The Weight is: 167.3 kgs
+BSA: 1.7929 meter square
+bash-4.4$ ./lab2_nlocklea_221
+Please enter a weight in Kg: 210
+Please enter a height in cm: 98
+The Height is: 98.0 cms
+The Weight is: 210.0 kgs
+BSA: 1.9362 meter square
+bash-4.4$ ./lab2_nlocklea_221[C[C[C[C[C[C[C[C[C[Cls[K./lab2_nlocklea_221
+Please enter a weight in Kg: 19 68.9
+Please enter a height in cm: 72.0
+The Height is: 72.0 cms
+The Weight is: 168.9 kgs
+BSA: 1.4115 meter square
+bash-4.4$ ./lab2_nlocklea_221
+Please enter a weight in Kg: 189.4
+Please enter a height in cm: 59.9
+The Height is: 59.9 cms
+The Weight is: 189.4 kgs
+BSA: 1.2968 meter square
+bash-4.4$ make clean
+rm lab2_nlocklea_221
+bash-4.4$ ls
+lab2_nlocklea_221.c  Lab2_typescript_nlocklea_221  Makefile
+bash-4.4$ exit
+
+Script done on 2021-09-13 12:03:35-04:00

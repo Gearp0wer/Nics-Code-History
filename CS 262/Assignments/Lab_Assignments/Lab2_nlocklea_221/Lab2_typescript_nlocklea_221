@@ -1,0 +1,87 @@
+Script started on 2021-09-03 14:37:20-04:00
+bash-4.4$ uname -a
+Linux zeus-1.vse.gmu.edu 4.18.0-305.10.2.el8_4.x86_64 #1 SMP Mon Jul 12 04:43:18 EDT 2021 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.4$ ls
+Lab2_nlocklea_221_Q1  Lab2_nlocklea_221_Q1.c  Lab2_nlocklea_221_Q2  Lab2_nlocklea_221_Q2.c  Lab2_nlocklea_221_Q3  Lab2_nlocklea_221_Q3.c  Lab2_typescript_nlocklea_221	Makefile
+bash-4.4$ cat nl[K[KLab2_nlocklea)[K_221_Q1.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 2 Q1
+ */
+
+#include <stdio.h>
+
+int main(){
+    int num;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    if(num%5==0 && num%7==0)
+        printf("%d is the multiple", num);
+    else
+        printf("%d is not the multiple", num);
+    return 0;
+}
+bash-4.4$ cat Lab2_nlocklea_221_Q2,[K.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 2 Q2
+ */
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    char var;
+    printf("Enter a letter: ");
+    scanf("%c", &var);
+
+    if(isupper(var))
+        printf("%c is an upper letter", var);
+    else
+        printf("%c is not an upper letter", var);
+
+    return 0;
+}
+bash-4.4$ car[Kt Lab2_nlocklea_221_Q3.c
+/*
+ * Nicholas Locklear G01090642
+ * CS 262, Lab Section 221
+ * Lab 2 Q3
+ */
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    char var;
+    printf("Enter a character: ");
+    scanf("%c", &var);
+
+    if(isalnum(var))
+        printf("%c is alphanumeric", var);
+    else
+        printf("%c is not alphanumeric", var);
+
+    return 0;
+}
+bash-4.4$ cat Makefile
+
+#Nicholas Locklear G01090642
+#CS 262, Lab Section 221
+#Lab 2
+
+all: Lab2_nlocklea_221_Q1 Lab2_nlocklea_221_Q2 Lab2_nlocklea_221_Q3
+problem1:
+	gcc -Wall -o p1 Lab2_nlocklea_221_Q1.c
+problem2:
+	gcc -Wall -o p2 Lab2_nlocklea_221_Q2.c
+problem3:
+	gcc -Wall -o p3 Lab2_nlocklea_221_Q3.c
+bash-4.4$ make
+make: Nothing to be done for 'all'.
+bash-4.4$ exit
+
+Script done on 2021-09-03 14:38:51-04:00
