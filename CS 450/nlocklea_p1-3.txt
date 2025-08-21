@@ -1,0 +1,192 @@
+SQL> @nlocklea_p1-3.sql
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Table created.
+
+values (2, 'Innovation','2023-01-01 18:22:21', NULL, NULL, 6, 10)
+                        *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (4, 'Innovation','2023-02-01 23:22:00', 55, NULL, 18, 1)
+                        *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (4, 'Innovation','2022-06-04 22:11:30', 78, NULL, 20, 50)
+                        *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (123, 'Johnson','2023-10-31 23:22:00', 68, NULL, 27, 11)
+                       *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (123, 'Johnson','2023-10-31 22:22:00', 63, NULL, 10, 11)
+                       *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (123, 'Johnson','2023-10-31 21:22:00', 61, NULL, 6, 3)
+                       *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (123, 'Johnson','2023-10-31 20:22:00', 57, NULL, 21, 6)
+                       *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+values (21, 'Johnson','2023-11-31 06:53:32', 76, NULL, 22, 11)
+                      *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+
+DEPARTMENTNAME                                     STREETADDRESS                
+-------------------------------------------------- --------------------         
+PHONENUMBER                                                                     
+-----------                                                                     
+Halloween                                          1                            
+     657885                                                                     
+                                                                                
+Space                                              3                            
+ 2132435465                                                                     
+                                                                                
+Miscellaneous_Variables                            2                            
+    8675309                                                                     
+                                                                                
+
+
+BUILDINGNAME         FLOORCOUNT                                                 
+-------------------- ----------                                                 
+Innovation                    3                                                 
+
+
+BUILDINGNAME         ROOMNUMBER                                                 
+-------------------- ----------                                                 
+Innovation                    6                                                 
+
+
+BUILDINGNAME          ROOMCOUNT                                                 
+-------------------- ----------                                                 
+Innovation                   57                                                 
+Johnson                     200                                                 
+
+
+no rows selected
+
+
+no rows selected
+
+
+ROOMNUMBER SQUAREFEET                                                           
+---------- ----------                                                           
+       123        800                                                           
+         6        100                                                           
+         4        120                                                           
+         2        100                                                           
+        21         60                                                           
+
+    ) AS subquery
+      *
+ERROR at line 10:
+ORA-00907: missing right parenthesis 
+
+
+SQL> quit

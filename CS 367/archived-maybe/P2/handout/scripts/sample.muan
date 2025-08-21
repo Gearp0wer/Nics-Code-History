@@ -1,0 +1,21 @@
+# Sample Script
+first = -0.45
+print(first)
+second = 4.5
+print(second)
+third = -0.25
+fourth = third++
+print(third)
+print(fourth)
+fourth += 1.5
+print(fourth)
+sum = first + second
+print(first)
+difference = first - second
+print(difference)
+product = first * second
+print(product)
+complex = 3 + second - 1.25 * -2
+print(complex)
+display(complex)
+quit

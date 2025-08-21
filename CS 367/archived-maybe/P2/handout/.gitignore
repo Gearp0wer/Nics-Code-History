@@ -1,0 +1,23 @@
+# No Grading Directories
+testing
+solution
+grading
+release-candidate
+
+# No temporary editor files
+*.swp
+
+# No Solution Files
+*_sol*
+ref_all_values.c
+
+# No libvm_sd development Directories
+lib
+
+# No intermediate object files.
+*.o
+
+# No compiled executables (run make)
+muan
+tester
+ref_all_values
